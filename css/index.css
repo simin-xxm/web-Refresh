@@ -1,0 +1,189 @@
+body{
+    background: #f5f5f5;
+}
+
+.title{
+    width: 100%;
+    height: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    color: #2E2D3C;
+    font-weight: bold;
+    font-size: 18px;
+    background-image: linear-gradient(to bottom right, #fff78c, #ffb3de);
+}
+.title li{
+    height: 100%;
+    line-height: 80px;
+    cursor: pointer;
+}
+.title li:hover{
+    color: #fe5136;
+    border-bottom: 3px solid #fe5136;
+}
+.box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.list{
+    width: 24%;
+    height: 350px;
+    background: white;
+    margin-bottom: 20px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+}
+.list_img{
+    width: 100%;
+    height: 65%;
+    display: flex;
+}
+.list p{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+.list .p1{
+    font-size: 15px;
+}
+.list .p2{
+    font-size: 13px;
+    color: #ccc;
+}
+.list .p3{
+    color: #FF8336;
+}
+.list  del{
+    color: #ccc;
+}
+
+.pages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    margin-bottom: 70px;
+}
+.pages li{
+    display: inline-block;
+    min-width: 30px;
+    height: 28px;
+    cursor: pointer;
+    color: #666;
+    font-size: 13px;
+    line-height: 28px;
+    background-color: #f9f9f9;
+    border: 1px solid #dce0e0;
+    text-align: center;
+    margin: 0 4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+ #page {
+     margin: 20px auto;
+     color: #666;
+     display: block;
+     text-align: center;
+ }
+
+#page li {
+    display: inline-block;
+    min-width: 30px;
+    height: 28px;
+    cursor: pointer;
+    color: #666;
+    font-size: 13px;
+    line-height: 28px;
+    background-color: #f9f9f9;
+    border: 1px solid #dce0e0;
+    text-align: center;
+    margin: 0 4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.xl-nextPage,
+.xl-prevPage{
+    width: 60px;
+    color: #0073A9;
+    height: 28px;
+}
+
+
+#page li.xl-disabled {
+    opacity: .5;
+    cursor: no-drop;
+}
+
+
+#page li.xl-active {
+    background-color: #0073A9;
+    border-color: #0073A9;
+    color: #FFF
+}
+
+#xlJumpNum {
+    width: 35px;
+    margin: 0 3px;
+}
+
+#xlJumpNum::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#xlJumpNum::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+body{
+    position: relative;
+}
+.main{
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    position: absolute;
+    left: 0;
+    top:0;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 99;
+}
+.layui-main{
+    display: none;
+    z-index: 88;
+}
+
+.fonts{
+    z-index: 90;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fonts i{
+    font-size: 100px;
+    color: #e0e0e0;
+    -webkit-animation:xuanz 6s linear infinite;
+}
+@-webkit-keyframes xuanz {
+    from{-webkit-transform:rotate(0deg);}
+    to{-webkit-transform:rotate(360deg);}
+}
+
+
+

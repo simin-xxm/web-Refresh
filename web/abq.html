@@ -1,0 +1,129 @@
+<!--
+<?php
+print <<<EOT
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="plugin/layui/css/layui.css">
+    <script src="plugin/jquery-2.1.1.js"></script>
+</head>
+<style>
+    .pages li{
+        margin: 0px 10px;
+    }
+    #pageitem a{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    #pageitem a:hover{
+        background:deepskyblue;
+    }
+
+    .lil{
+        background-color: #00CC66;
+    }
+</style>
+<body>
+<div class="layui-main">
+    <ul class="title" id="test">
+<!--
+EOT;
+foreach($tapdb as $key=>$rs){
+$key+=1;
+print <<<EOT
+-->
+        <li><a href="alabel.php?id=$key">$rs[tabname]</a></li>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+    </ul>
+    <div class="box">
+<!--
+EOT;
+foreach($listdb as $key=>$as){
+print <<<EOT
+-->
+
+        <div class='list'>
+            <div class='list_img'>
+                <img src="$as[img]" alt="" width="100%" height="100%">
+            </div>
+            <p class='p1'>$as[name]</p>
+        </div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+    </div>
+
+    <!--   分页    -->
+    <div class="pages">
+        <a href="alabel.php?id=$id&str=1" style="margin-right: 20px">首页</a>
+        <a href="alabel.php?id=$id&str=$io">上一页</a>
+        <div id="pageitem">
+<!--
+EOT;
+for($i=1;$i<=$itemnum;$i++){
+print <<<EOT
+-->
+
+            <li><a href="alabel.php ?id=$id&str=$i" id="item$i">$i</a></li>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+        </div>
+        <a href="alabel.php?id=$id&str=$iu">下一页</a>
+        <a href="alabel.php?id=$id&str=$itemnum" style="margin-left: 20px">尾页</a>
+        <p style="margin-left: 20px">跳转到</p>
+        <input type="number" value="1" id="xlJumpNum">
+        <p>页</p>
+        <div class="yes">
+        <a href="" id="bum" style="margin-left: 20px">确定</a>
+        </div>
+    </div>
+
+
+</div>
+<script>
+    $(".layui-main").show();
+    $("#item1").css("background","#75D4E2");
+
+    //上一页
+
+
+
+    var itemnum = '$itemnum';
+    /*跳转指定页码*/
+    let str = "";
+    $("#bum").click(function () {
+        let vlue =  document.getElementById('xlJumpNum').value;
+        if (vlue>itemnum){
+            alert("该分类下面只有"+itemnum+"页");
+            $("#bum").attr("href","#");
+        }else if (vlue < 1) {
+            vlue=1;
+            alert("页码没有0和负数");
+            $("#bum").attr("href","#");
+        }else {
+            $("#bum").attr("href","alabel.php?id=$id&str="+vlue);
+        }
+    });
+
+</script>
+</body>
+</html>
+<!--
+EOT;
+?>
+-->
